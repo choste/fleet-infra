@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: express
+  namespace: flux-system
+spec:
+  type: oci
+  interval: 5m0s
+  url: oci://us-central1-docker.pkg.dev/bazel-352318/quickstart-helm-repo

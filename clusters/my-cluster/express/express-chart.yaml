@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: express
+  namespace: default
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: express
+      version: '0.0.1'
+      sourceRef:
+        kind: HelmRepository
+        name: express
+        namespace: flux-system
+      interval: 1m
+      valuesFiles:
+        - values.yaml
